@@ -5,6 +5,7 @@ package com.song.thread.chapter2;
  */
 public class DaemonDemo {
     public static class DaemonT extends Thread {
+        @Override
         public void run() {
             while (true) {
                 System.out.println("I am alive");
@@ -28,9 +29,8 @@ public class DaemonDemo {
      */
     public static void main(String args[]) throws InterruptedException {
         Thread thread = new DaemonT();
-        thread.setDaemon(true);
+ //       thread.setDaemon(true);
         thread.start();
         Thread.sleep(3000);
-
     }
 }

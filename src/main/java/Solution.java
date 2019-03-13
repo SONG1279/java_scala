@@ -1,66 +1,81 @@
-
-import com.song.jvm.Test;
-
-import java.util.Collections;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.PriorityBlockingQueue;
 
 /**
  * @author hadoop
  */
 public class Solution {
 
+    public static void main(String[] args) throws IOException {
+        File file = new File("/home/hadoop/Desktop/WZ.txt");
+        BufferedReader br = new BufferedReader(new FileReader(new File("/home/hadoop/Desktop/WZ.txt")));
+        FileInputStream fileInputStream = new FileInputStream(file);
 
+        br.readLine();
+        br.readLine();
+        String a = br.readLine();
+
+        System.out.println(a);
+
+        String[] strs= a.split(" ");
+        for (String s : strs){
+            System.out.println(s);
+        }
+
+
+
+
+    }
 
 }
 
-
-
-class Parent implements Comparable {
-    private int age = 0;
-
-    public Parent(int age) {
-        this.age = age;
+class Animal {
+    public void say() {
+        System.out.println("animal");
     }
 
+}
+
+class Cat extends Animal {
     @Override
-    public int compareTo(Object o) {
-        System.out.println("method of parent");
-        Parent o1 = (Parent) o;
-        return age > o1.age ? 1 : age < o1.age ? -1 : 0;
+    public void say() {
+        System.out.println("cat");
     }
 }
 
-class Child extends Parent {
-    public Child() {
-        super(3);
-    }
-
+class BigCat extends Cat {
     @Override
-    public int compareTo(Object o) {
-        System.out.println("method of child");
-        return 1;
+    public void say() {
+        System.out.println("bigcat");
     }
+
+    ;
+
 }
 
-class TreeSetTest {
-    public static void main(String[] args) {
-        TreeSet set = new TreeSet();
-        set.add(new Parent(3));
-        set.add(new Child());
-        set.add(new Parent(4));
-        System.out.println(set.size());
+class Dag extends Animal {
+    @Override
+    public void say() {
+        System.out.println("dag");
     }
+
 }
 
 
+/*
+*
+6 3
+1 1
+3 5
+4 8
+6 4
+10 3
+11 2
 
 
 
-
-
-
-
-
-
-
+*
+* */

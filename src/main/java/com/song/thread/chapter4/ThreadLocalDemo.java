@@ -11,6 +11,7 @@ public class ThreadLocalDemo {
     public static Random random = new Random(123);
 
     public static ThreadLocal<Random> randomThreadLocal = new ThreadLocal<Random>() {
+        @Override
         protected Random initialValue() {
             return new Random(123);
         }
