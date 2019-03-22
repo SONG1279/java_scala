@@ -13,7 +13,7 @@ public class Quick {
 
     public static void sort(Comparable[] a, int lo, int hi){
 
-        if (hi <= lo + 10) return;
+        if (hi <= lo) return;
         int j = partition(a, lo, hi);
         sort(a, lo, j - 1);
         sort(a, j + 1, hi);

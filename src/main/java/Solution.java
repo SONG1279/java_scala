@@ -1,68 +1,26 @@
+import com.song.thread.chapter3.ReenterLock;
+
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.locks.Lock;
 
 /**
  * @author hadoop
  */
 public class Solution {
 
-    public static void main(String[] args) throws IOException {
-        File file = new File("/home/hadoop/Desktop/WZ.txt");
-        BufferedReader br = new BufferedReader(new FileReader(new File("/home/hadoop/Desktop/WZ.txt")));
-        FileInputStream fileInputStream = new FileInputStream(file);
-
-        br.readLine();
-        br.readLine();
-        String a = br.readLine();
-
-        System.out.println(a);
-
-        String[] strs= a.split(" ");
-        for (String s : strs){
-            System.out.println(s);
-        }
-
-
-
+    public static void main(String[] args) {
 
     }
 
-}
 
-class Animal {
-    public void say() {
-        System.out.println("animal");
-    }
 
 }
 
-class Cat extends Animal {
-    @Override
-    public void say() {
-        System.out.println("cat");
-    }
-}
-
-class BigCat extends Cat {
-    @Override
-    public void say() {
-        System.out.println("bigcat");
-    }
-
-    ;
-
-}
-
-class Dag extends Animal {
-    @Override
-    public void say() {
-        System.out.println("dag");
-    }
-
-}
 
 
 /*

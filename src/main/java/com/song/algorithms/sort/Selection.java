@@ -37,7 +37,9 @@ public class Selection {
         for (int i = 0; i < N; i++) {
             int min = i;
             for (int j =  i + 1; j < N; j++) {
-                if (less(a[j], a[min])) min = j;
+                if (less(a[j], a[min])) {
+                    min = j;
+                }
             }
             exce(a, i, min);
         }
@@ -72,6 +74,7 @@ public class Selection {
         for (int i = 1; i < a.length; i++) {
             if (less(a[i], a[i - 1])) return false;
         }
+
         return true;
     }
 }
